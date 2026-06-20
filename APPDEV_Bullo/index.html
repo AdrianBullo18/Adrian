@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern To-Do List</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Smart tasks, simple workflow</p>
+        <h1>To-Do List</h1>
+      </div>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+        <span class="theme-text">Dark mode</span>
+      </button>
+    </header>
+
+    <section class="task-panel" aria-label="Create and manage your tasks">
+      <form id="taskForm" class="task-form">
+        <label for="taskInput" class="sr-only">New task description</label>
+        <input id="taskInput" class="task-input" type="text" placeholder="Add a new task" autocomplete="off" />
+        <button type="submit" class="button button-primary">Add task</button>
+      </form>
+
+      <div class="task-status-bar">
+        <div id="taskCount" class="task-count">0 tasks remaining</div>
+        <div class="task-filters" role="group" aria-label="Task filter">
+          <button type="button" class="filter-button active" data-filter="all">All</button>
+          <button type="button" class="filter-button" data-filter="active">Active</button>
+          <button type="button" class="filter-button" data-filter="completed">Completed</button>
+        </div>
+      </div>
+
+      <ul id="taskList" class="task-list" aria-live="polite"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
